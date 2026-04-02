@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #c0392b;
+  --primary-light: #e74c3c;
+  --primary-dark: #7b1a10;
+  --accent: #e8621a;
+  --accent-light: #f4a261;
+  --secondary: #1a0a08;
+  --bg-dark: #0d0604;
+  --bg-card: #1c0e0b;
+  --bg-light: #f5f0ef;
+  --text-light: #f5e8e6;
+  --text-muted: #b08880;
+  --text-dark: #1a0a08;
+  --border: rgba(192, 57, 43, 0.2);
+  --grad-main: linear-gradient(135deg, #7b1a10 0%, #c0392b 40%, #e8621a 100%);
+  --grad-dark: linear-gradient(180deg, #0d0604 0%, #1a0a08 100%);
+  --shadow-glow: 0 0 40px rgba(192, 57, 43, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f5f0ef;
+  color: #1a0a08;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
