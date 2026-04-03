@@ -86,11 +86,11 @@ export default function HomePage() {
               {/* App store row */}
               <div className="hp-stores">
                 <div className="hp-store-btn">
-                  <span className="hp-store-icon">🍎</span>
+                  <img src="/apple-store.png" alt="App Store" className="hp-store-img" />
                   <div><div className="hp-store-sub">Coming soon on</div><div className="hp-store-name">App Store</div></div>
                 </div>
                 <div className="hp-store-btn">
-                  <span className="hp-store-icon">▶</span>
+                  <img src="/google-play.png" alt="Google Play" className="hp-store-img" />
                   <div><div className="hp-store-sub">Coming soon on</div><div className="hp-store-name">Google Play</div></div>
                 </div>
               </div>

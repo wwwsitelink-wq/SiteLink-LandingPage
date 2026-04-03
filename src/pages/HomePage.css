@@ -397,8 +397,12 @@
   border-color: rgba(192, 57, 43, 0.3);
 }
 
-.hp-store-icon {
-  font-size: 1.1rem;
+.hp-store-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
 }
 
 .hp-store-sub {
