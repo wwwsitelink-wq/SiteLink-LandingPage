@@ -126,6 +126,15 @@ export default function ContactPage() {
                     <a href="tel:+918260805119" className="info-action">Call us <ArrowRight size={13} /></a>
                   </div>
                 </div>
+                <div className="info-card info-card-bulk">
+                  <div className="info-icon"><Phone size={20} /></div>
+                  <div>
+                    <div className="info-bulk-badge">Bulk Manpower Orders</div>
+                    <div className="info-title">Need workers at scale?</div>
+                    <div className="info-line">For bulk orders of manpower, contact us directly on:</div>
+                    <a href="tel:+918260805119" className="info-bulk-number">+91 82608 05119</a>
+                  </div>
+                </div>
                 <div className="info-card">
                   <div className="info-icon"><Linkedin size={20} /></div>
                   <div>

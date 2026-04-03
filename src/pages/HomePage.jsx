@@ -1,140 +1,137 @@
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Shield, Users, Building2, TrendingUp, CheckCircle, Star } from 'lucide-react';
+import { Wifi, Clock, Users, Building2, ArrowRight, CheckCircle } from 'lucide-react';
 import './HomePage.css';
 
 export default function HomePage() {
   const navigate = useNavigate();
 
-  const testimonials = [
-    { name: 'Rajesh Kumar', role: 'Project Manager, BuildCorp',   text: 'SiteLink transformed how we verify workers. The audit trail is impeccable.',              rating: 5 },
-    { name: 'Priya Sharma', role: 'HR Director, ConstructPro',    text: 'Compliance reporting used to take days. Now it takes minutes.',                            rating: 5 },
-    { name: 'Amit Patel',   role: 'Site Supervisor, InfraTech',   text: 'The vendor verification system saved us from multiple compliance issues.',                  rating: 5 },
-  ];
-
   return (
     <div className="home-page">
+      {/* ── Background ── */}
+      <div className="hp-bg">
+        <div className="hp-orb hp-orb-1" />
+        <div className="hp-orb hp-orb-2" />
+        <div className="hp-grid" />
+      </div>
 
-      {/* ── Hero ── */}
-      <section className="hero">
-        <div className="hero-bg">
-          <div className="hero-orb hero-orb-1" />
-          <div className="hero-orb hero-orb-2" />
-          <div className="hero-grid" />
-        </div>
+      {/* ── Phone Frame ── */}
+      <div className="hp-scene">
 
-        <div className="hero-content">
-          <div className="hero-badge">
-            <Shield size={14} />
-            <span>India's #1 Construction Manpower Network</span>
+        {/* Left floating cards */}
+        <div className="hp-float-left">
+          <div className="hp-float-card" style={{ animationDelay: '0s' }}>
+            <div className="hfc-icon"><Users size={18} /></div>
+            <div>
+              <div className="hfc-val">12,000+</div>
+              <div className="hfc-lbl">Verified Workers</div>
+            </div>
           </div>
-          <h1 className="hero-title">
-            Connect. Verify.<br />
-            <span className="hero-gradient-text">Build with Confidence.</span>
-          </h1>
-          <p className="hero-subtitle">
-            SiteLink is the trusted manpower network connecting verified construction professionals,
-            contractors, and project managers across India's fastest-growing infrastructure sector.
-          </p>
-          <div className="hero-actions">
-            <button className="hp-btn-primary" onClick={() => navigate('/audit')}>
-              Explore Dashboard <ArrowRight size={18} />
-            </button>
-            <button className="hp-btn-outline" onClick={() => navigate('/features')}>
-              See Features
-            </button>
+          <div className="hp-float-card" style={{ animationDelay: '0.4s' }}>
+            <div className="hfc-icon"><Building2 size={18} /></div>
+            <div>
+              <div className="hfc-val">850+</div>
+              <div className="hfc-lbl">Vendors Registered</div>
+            </div>
           </div>
-          <div className="hero-trust">
-            {['ISO Certified', 'BOCW Compliant', 'PF & ESI Verified'].map(t => (
-              <div key={t} className="trust-badge">
-                <CheckCircle size={14} /><span>{t}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="hero-visual">
-          <div className="hero-img-stack">
-            {[
-              { src: '/11.jpg', label: 'Construction Site Workers', delay: '0s'    },
-              { src: '/22.jpg', label: 'Engineer Reviewing Plans',  delay: '0.15s' },
-              { src: '/33.jpg', label: 'Building Construction',      delay: '0.3s'  },
-            ].map(({ src, label, delay }) => (
-              <div key={label} className="hero-img-card" style={{ animationDelay: delay }}>
-                <img src={src} alt={label} />
-                <div className="hero-img-label">{label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Why SiteLink ── */}
-      <section className="hp-why-section">
-        <div className="hp-container">
-          <div className="hp-section-header">
-            <span className="hp-section-tag">Why SiteLink</span>
-            <h2>Built for the Construction Industry</h2>
-            <p>Every feature designed around the real challenges of managing construction manpower at scale.</p>
-          </div>
-          <div className="hp-why-grid">
-            {[
-              { icon: Shield,    title: 'Real-time Verification', desc: 'Instant background checks, skill certifications, and document verification for every worker.' },
-              { icon: Users,     title: 'Manpower Network',       desc: 'Access to 12,000+ verified construction professionals across 50+ trade categories.' },
-              { icon: Building2, title: 'Vendor Management',      desc: 'Approved contractor database with compliance history and performance ratings.' },
-              { icon: TrendingUp,title: 'Audit Reports',          desc: 'Automated compliance reports for BOCW, PF, ESI, and labour law requirements.' },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="hp-why-card">
-                <div className="hp-why-icon"><Icon size={22} /></div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Testimonials ── */}
-      <section className="hp-testimonials-section">
-        <div className="hp-container">
-          <div className="hp-section-header">
-            <span className="hp-section-tag">Testimonials</span>
-            <h2>Trusted by Industry Leaders</h2>
-          </div>
-          <div className="hp-testimonials-grid">
-            {testimonials.map(t => (
-              <div key={t.name} className="hp-testimonial-card">
-                <div className="hp-t-stars">
-                  {[...Array(t.rating)].map((_, i) => <Star key={i} size={14} fill="#e8621a" color="#e8621a" />)}
-                </div>
-                <p className="hp-t-text">"{t.text}"</p>
-                <div className="hp-t-author">
-                  <div className="hp-t-avatar">{t.name[0]}</div>
-                  <div>
-                    <div className="hp-t-name">{t.name}</div>
-                    <div className="hp-t-role">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="hp-cta-section">
-        <div className="hp-container">
-          <div className="hp-cta-box">
-            <div className="hp-cta-orb" />
-            <h2>Ready to Streamline Your Workforce?</h2>
-            <p>Join 500+ construction companies already using SiteLink to manage compliance effortlessly.</p>
-            <div className="hp-cta-actions">
-              <button className="hp-btn-primary" onClick={() => navigate('/contact')}>Get Started Today <ArrowRight size={18} /></button>
-              <button className="hp-btn-ghost" onClick={() => navigate('/about')}>Learn More</button>
+          <div className="hp-float-card" style={{ animationDelay: '0.8s' }}>
+            <div className="hfc-icon"><Clock size={18} /></div>
+            <div>
+              <div className="hfc-val">24 hrs</div>
+              <div className="hfc-lbl">Hiring Guarantee</div>
             </div>
           </div>
         </div>
-      </section>
 
+        {/* Phone */}
+        <div className="hp-phone">
+          <div className="hp-phone-inner">
+            {/* Status bar */}
+            <div className="hp-status-bar">
+              <span>9:41</span>
+              <div className="hp-status-icons">
+                <Wifi size={12} />
+                <div className="hp-battery" />
+              </div>
+            </div>
+
+            {/* App content */}
+            <div className="hp-app-content">
+              {/* Logo */}
+              <div className="hp-app-logo">
+                <img src="/logo.png" alt="SiteLink" />
+              </div>
+
+              {/* Live badge */}
+              <div className="hp-live-badge">
+                <span className="hp-live-dot" />
+                <span>Manpower Network • Live</span>
+              </div>
+
+              {/* Main text */}
+              <h1 className="hp-app-title">Available<br /><span className="hp-grad-text">Very Soon</span></h1>
+              <p className="hp-app-sub">India's fastest manpower hiring platform for construction sites. Hire verified workers in 24 hours.</p>
+
+              {/* Trust pills */}
+              <div className="hp-pills">
+                {['Workers', 'Vendors', 'Admin Panel'].map(p => (
+                  <div key={p} className="hp-pill"><CheckCircle size={11} />{p}</div>
+                ))}
+              </div>
+
+              {/* Notify button */}
+              <button className="hp-notify-btn" onClick={() => navigate('/contact')}>
+                Notify Me at Launch <ArrowRight size={15} />
+              </button>
+
+              {/* App store row */}
+              <div className="hp-stores">
+                <div className="hp-store-btn">
+                  <span className="hp-store-icon">🍎</span>
+                  <div><div className="hp-store-sub">Coming soon on</div><div className="hp-store-name">App Store</div></div>
+                </div>
+                <div className="hp-store-btn">
+                  <span className="hp-store-icon">▶</span>
+                  <div><div className="hp-store-sub">Coming soon on</div><div className="hp-store-name">Google Play</div></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Home indicator */}
+            <div className="hp-home-bar" />
+          </div>
+        </div>
+
+        {/* Right floating cards */}
+        <div className="hp-float-right">
+          <div className="hp-float-card hp-float-card-alt" style={{ animationDelay: '0.2s' }}>
+            <div className="hfc-icon"><CheckCircle size={18} /></div>
+            <div>
+              <div className="hfc-val">48 hrs</div>
+              <div className="hfc-lbl">Replacement SLA</div>
+            </div>
+          </div>
+          <div className="hp-float-card hp-float-card-alt" style={{ animationDelay: '0.6s' }}>
+            <div className="hfc-icon"><Users size={18} /></div>
+            <div>
+              <div className="hfc-val">OTP Login</div>
+              <div className="hfc-lbl">Simple & Secure</div>
+            </div>
+          </div>
+          <div className="hp-float-card hp-float-card-alt" style={{ animationDelay: '1s' }}>
+            <div className="hfc-icon"><Building2 size={18} /></div>
+            <div>
+              <div className="hfc-val">ID Verified</div>
+              <div className="hfc-lbl">Every Worker</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* ── Bottom tagline ── */}
+      <div className="hp-tagline">
+        <p>Connecting <span>Workers</span> · <span>Vendors</span> · <span>Construction Sites</span> across India</p>
+      </div>
     </div>
   );
 }

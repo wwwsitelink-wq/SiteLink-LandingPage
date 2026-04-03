@@ -1,70 +1,14 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  Shield, Users, FileText, BarChart3, Bell, Lock,
-  CheckCircle, ArrowRight, Zap, Globe, Database, Smartphone
-} from 'lucide-react';
+import { Eye, Target, Heart, Star, ArrowRight, CheckCircle, Zap, Users, Building2, Shield } from 'lucide-react';
 import './FeaturesPage.css';
-
-const features = [
-  {
-    icon: Shield,
-    title: 'Real-time Worker Verification',
-    desc: 'Instant background checks, skill certifications, BOCW registration, and document verification for every worker on your site.',
-    points: ['Aadhaar & PAN verification', 'Skill certificate validation', 'BOCW registration check', 'Criminal background screening'],
-    color: '#c0392b',
-  },
-  {
-    icon: Users,
-    title: 'Manpower Network Access',
-    desc: 'Browse and hire from 12,000+ pre-verified construction professionals across 50+ trade categories.',
-    points: ['50+ trade categories', 'Skill-based filtering', 'Location-based search', 'Rating & review system'],
-    color: '#e8621a',
-  },
-  {
-    icon: FileText,
-    title: 'Automated Compliance Reports',
-    desc: 'Generate BOCW, PF, ESI, and labour law compliance reports automatically with one click.',
-    points: ['BOCW compliance reports', 'PF & ESI statements', 'Labour law documentation', 'Audit-ready exports'],
-    color: '#c0392b',
-  },
-  {
-    icon: BarChart3,
-    title: 'Audit Dashboard',
-    desc: 'Real-time visibility into your workforce compliance status, verification metrics, and risk indicators.',
-    points: ['Live compliance metrics', 'Risk score tracking', 'Trend analysis', 'Custom date ranges'],
-    color: '#e8621a',
-  },
-  {
-    icon: Bell,
-    title: 'Smart Alerts & Notifications',
-    desc: 'Proactive alerts for expiring documents, compliance deadlines, and verification failures.',
-    points: ['Document expiry alerts', 'Compliance deadline reminders', 'Verification failure notifications', 'Custom alert rules'],
-    color: '#c0392b',
-  },
-  {
-    icon: Lock,
-    title: 'Enterprise Security',
-    desc: 'Bank-grade security with role-based access control, audit logs, and data encryption.',
-    points: ['256-bit AES encryption', 'Role-based access control', 'Complete audit trail', 'GDPR compliant'],
-    color: '#e8621a',
-  },
-];
-
-const integrations = [
-  { icon: Zap, name: 'Zapier', desc: 'Automate workflows' },
-  { icon: Globe, name: 'REST API', desc: 'Custom integrations' },
-  { icon: Database, name: 'SAP / ERP', desc: 'Enterprise systems' },
-  { icon: Smartphone, name: 'Mobile App', desc: 'iOS & Android' },
-];
 
 export default function FeaturesPage() {
   const navigate = useNavigate();
-  const [activeFeature, setActiveFeature] = useState(0);
 
   return (
     <div className="features-page">
-      {/* Hero */}
+
+      {/* ── Hero ── */}
       <section className="features-hero">
         <div className="fh-bg">
           <div className="fh-orb fh-orb-1" />
@@ -72,109 +16,139 @@ export default function FeaturesPage() {
         </div>
         <div className="container">
           <div className="fh-content">
-            <span className="section-tag">Platform Features</span>
-            <h1>Everything You Need to<br /><span className="gradient-text">Manage Your Workforce</span></h1>
-            <p>A complete suite of tools for construction workforce verification, compliance management, and manpower sourcing.</p>
-            <button className="btn-primary" onClick={() => navigate('/audit')}>
-              Try the Dashboard <ArrowRight size={18} />
-            </button>
+            <span className="section-tag">Vision & Mission</span>
+            <h1>Why We Built<br /><span className="gradient-text">SiteLink</span></h1>
+            <p>A platform born from the real frustrations of India's construction industry — built to bring speed, trust, and dignity to every worker and vendor.</p>
           </div>
         </div>
       </section>
 
-      {/* Feature Grid */}
-      <section className="features-grid-section">
+      {/* ── Vision / Mission / Values ── */}
+      <section className="vmv-section">
         <div className="container">
-          <div className="section-header">
-            <span className="section-tag">Core Features</span>
-            <h2>Built for Construction Compliance</h2>
-            <p>Every feature purpose-built for the unique challenges of managing construction manpower.</p>
-          </div>
-          <div className="features-grid">
-            {features.map((f, i) => (
-              <div
-                key={f.title}
-                className={`feature-card ${activeFeature === i ? 'active' : ''}`}
-                onClick={() => setActiveFeature(i)}
-                style={{ '--card-color': f.color }}
-              >
-                <div className="fc-icon" style={{ background: `linear-gradient(135deg, ${f.color}, ${f.color}99)` }}>
-                  <f.icon size={24} />
-                </div>
-                <h3>{f.title}</h3>
-                <p>{f.desc}</p>
-                <ul className="fc-points">
-                  {f.points.map(p => (
-                    <li key={p}><CheckCircle size={13} />{p}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section className="how-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-tag">How It Works</span>
-            <h2>Get Started in 3 Simple Steps</h2>
-          </div>
-          <div className="steps-grid">
+          <div className="vmv-grid">
             {[
-              { step: '01', title: 'Register Your Company', desc: 'Create your SiteLink account and set up your company profile with project details.' },
-              { step: '02', title: 'Add Your Workers', desc: 'Upload worker details or let workers self-register. Our system verifies documents automatically.' },
-              { step: '03', title: 'Stay Compliant', desc: 'Get real-time compliance scores, automated reports, and alerts for any issues.' },
-            ].map((s, i) => (
-              <div key={s.step} className="step-card" style={{ animationDelay: `${i * 150}ms` }}>
-                <div className="step-number">{s.step}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-                {i < 2 && <div className="step-arrow"><ArrowRight size={20} /></div>}
+              {
+                icon: Eye,
+                title: 'Our Vision',
+                text: 'A construction industry where every worker is verified, every vendor gets manpower within 24 hours, and every replacement is handled within 48 hours — without friction.',
+                color: '#c0392b',
+              },
+              {
+                icon: Target,
+                title: 'Our Mission',
+                text: 'To build India\'s most trusted manpower hiring platform — connecting verified construction workers with vendors through a fast, simple, and reliable request-based system.',
+                color: '#e8621a',
+              },
+              {
+                icon: Heart,
+                title: 'Our Values',
+                text: 'Speed in delivery. Dignity for every worker. Transparency in every transaction. Accountability at every step of the hiring process.',
+                color: '#c0392b',
+              },
+            ].map(({ icon: Icon, title, text, color }) => (
+              <div key={title} className="vmv-card">
+                <div className="vmv-icon" style={{ background: `linear-gradient(135deg, ${color}, ${color}99)` }}>
+                  <Icon size={26} />
+                </div>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Integrations */}
-      <section className="integrations-section">
+      {/* ── The Problem We Solve ── */}
+      <section className="problem-section">
+        <div className="container">
+          <div className="problem-grid">
+            <div className="problem-content">
+              <span className="section-tag">The Problem</span>
+              <h2>Construction Manpower is Broken</h2>
+              <p>India's construction industry employs millions of workers — yet hiring is still done through phone calls, middlemen, and unverified contacts. Vendors wait days for workers. Workers wait weeks for jobs. No one has visibility.</p>
+              <p>Compliance is manual. Replacements take forever. And there's no single platform that connects workers, vendors, and administrators in one place.</p>
+              <div className="problem-points">
+                {[
+                  'No verified worker database',
+                  'Hiring takes days or weeks',
+                  'No replacement guarantee',
+                  'Manual, paper-based processes',
+                  'No transparency for vendors',
+                ].map(p => (
+                  <div key={p} className="problem-point">
+                    <div className="pp-dot" />
+                    <span>{p}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="solution-content">
+              <span className="section-tag">The Solution</span>
+              <h2>SiteLink Changes Everything</h2>
+              <p>SiteLink is a mobile-first platform that digitizes the entire manpower hiring process — from worker registration and verification to vendor requests and admin matching.</p>
+              <div className="solution-points">
+                {[
+                  { icon: Zap,       text: 'Manpower confirmed in 24 hours' },
+                  { icon: CheckCircle, text: 'Replacement guaranteed in 48 hours' },
+                  { icon: Shield,    text: 'Every worker ID-verified & admin-approved' },
+                  { icon: Users,     text: 'Workers register via mobile OTP — no paperwork' },
+                  { icon: Building2, text: 'Vendors post requirements in minutes' },
+                ].map(({ icon: Icon, text }) => (
+                  <div key={text} className="solution-point">
+                    <div className="sp-icon"><Icon size={16} /></div>
+                    <span>{text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Core Beliefs ── */}
+      <section className="beliefs-section">
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">Integrations</span>
-            <h2>Connects with Your Existing Tools</h2>
+            <span className="section-tag">What We Stand For</span>
+            <h2>Our Core Beliefs</h2>
           </div>
-          <div className="integrations-grid">
-            {integrations.map(({ icon: Icon, name, desc }) => (
-              <div key={name} className="integration-card">
-                <div className="int-icon"><Icon size={28} /></div>
-                <div className="int-name">{name}</div>
-                <div className="int-desc">{desc}</div>
+          <div className="beliefs-grid">
+            {[
+              { icon: Star,        title: 'Workers Deserve Dignity',      desc: 'Every construction worker deserves a verified profile, fair pay, and a platform that represents them professionally.' },
+              { icon: Zap,         title: 'Speed is Non-Negotiable',      desc: 'Construction sites can\'t wait. 24-hour hiring and 48-hour replacement isn\'t a goal — it\'s our guarantee.' },
+              { icon: Shield,      title: 'Trust Through Verification',   desc: 'No unverified worker enters our network. Every profile is checked, approved, and maintained by our admin team.' },
+              { icon: Building2,   title: 'Vendors Need Simplicity',      desc: 'Vendors shouldn\'t need to manage complex contracts. Post a requirement, get workers — that\'s it.' },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="belief-card">
+                <div className="bc-icon"><Icon size={22} /></div>
+                <h3>{title}</h3>
+                <p>{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ── */}
       <section className="features-cta">
         <div className="container">
           <div className="fcta-box">
             <div className="fcta-orb" />
-            <h2>Ready to Transform Your Compliance?</h2>
-            <p>Join 500+ construction companies already using SiteLink.</p>
+            <h2>Be Part of the Change</h2>
+            <p>Whether you're a vendor needing workers or a worker looking for jobs — SiteLink is launching soon.</p>
             <div className="fcta-actions">
               <button className="btn-primary" onClick={() => navigate('/contact')}>
-                Get Started <ArrowRight size={18} />
+                Get Notified at Launch <ArrowRight size={18} />
               </button>
-              <button className="btn-outline" onClick={() => navigate('/audit')}>
-                View Dashboard
+              <button className="btn-outline" onClick={() => navigate('/about')}>
+                Learn More
               </button>
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 }

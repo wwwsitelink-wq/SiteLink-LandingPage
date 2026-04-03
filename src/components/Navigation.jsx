@@ -16,11 +16,10 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Features', path: '/features' },
-    { label: 'Contact', path: '/contact' },
-    { label: 'Dashboard', path: '/audit' },
+    { label: 'Home',              path: '/' },
+    { label: 'About',             path: '/about' },
+    { label: 'Vision & Mission',  path: '/vision' },
+    { label: 'Contact',           path: '/contact' },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -40,7 +39,7 @@ export default function Navigation() {
           {navItems.map((item) => (
             <li key={item.path}>
               <button
-                className={`nav-link ${isActive(item.path) ? 'active' : ''} ${item.label === 'Dashboard' ? 'nav-cta' : ''}`}
+                className={`nav-link ${isActive(item.path) ? 'active' : ''}`}
                 onClick={() => { navigate(item.path); setMobileOpen(false); }}
               >
                 {item.label}

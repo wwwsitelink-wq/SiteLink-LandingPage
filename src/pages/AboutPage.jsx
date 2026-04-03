@@ -1,28 +1,14 @@
 import { useNavigate } from 'react-router-dom';
-import { Target, Eye, Heart, Award, Users, MapPin, ArrowRight } from 'lucide-react';
+import { Users, Building2, Clock, CheckCircle, ArrowRight, Smartphone, Shield } from 'lucide-react';
 import './AboutPage.css';
-
-const team = [
-  { name: 'Vikram Singh', role: 'CEO & Founder', initials: 'VS', desc: '15+ years in construction industry management.' },
-  { name: 'Neha Gupta', role: 'CTO', initials: 'NG', desc: 'Ex-TCS engineer, built SiteLink\'s verification engine.' },
-  { name: 'Arjun Mehta', role: 'Head of Compliance', initials: 'AM', desc: 'Labour law expert with 12 years of experience.' },
-  { name: 'Sunita Rao', role: 'VP Operations', initials: 'SR', desc: 'Scaled operations across 20+ Indian cities.' },
-];
-
-const milestones = [
-  { year: '2019', title: 'Founded', desc: 'SiteLink launched in Mumbai with 50 verified workers.' },
-  { year: '2020', title: 'Series A', desc: 'Raised ₹5Cr to expand verification infrastructure.' },
-  { year: '2022', title: 'Pan-India', desc: 'Expanded to 25 cities with 5,000+ verified workers.' },
-  { year: '2024', title: '10K+ Workers', desc: 'Crossed 10,000 verified professionals milestone.' },
-  { year: '2026', title: 'Today', desc: '12,000+ workers, 850+ vendors, 500+ active projects.' },
-];
 
 export default function AboutPage() {
   const navigate = useNavigate();
 
   return (
     <div className="about-page">
-      {/* Hero */}
+
+      {/* ── Hero ── */}
       <section className="about-hero">
         <div className="about-hero-bg">
           <div className="ah-orb ah-orb-1" />
@@ -31,53 +17,37 @@ export default function AboutPage() {
         <div className="container">
           <div className="about-hero-content">
             <span className="section-tag">About SiteLink</span>
-            <h1>The Manpower Network<br /><span className="gradient-text">Built for Bharat</span></h1>
-            <p>We're on a mission to bring transparency, trust, and technology to India's construction workforce — connecting skilled workers with the right opportunities while ensuring full compliance.</p>
+            <h1>India's Fastest<br /><span className="gradient-text">Manpower Hiring Platform</span></h1>
+            <p>SiteLink is a manpower hiring application built for India's construction industry. We connect verified workers with vendors and construction companies — delivering confirmed manpower within 24 hours and replacements within 48 hours.</p>
           </div>
         </div>
       </section>
 
-      {/* Mission / Vision / Values */}
-      <section className="mvv-section">
+      {/* ── What is SiteLink ── */}
+      <section className="about-what-section">
         <div className="container">
-          <div className="mvv-grid">
-            {[
-              { icon: Target, title: 'Our Mission', text: 'To digitize and verify India\'s construction workforce, creating a trusted network that benefits workers, contractors, and project owners alike.' },
-              { icon: Eye, title: 'Our Vision', text: 'A construction industry where every worker is verified, every project is compliant, and every stakeholder has complete visibility.' },
-              { icon: Heart, title: 'Our Values', text: 'Transparency in every verification. Dignity for every worker. Accountability at every level of the supply chain.' },
-            ].map(({ icon: Icon, title, text }) => (
-              <div key={title} className="mvv-card">
-                <div className="mvv-icon"><Icon size={26} /></div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Story */}
-      <section className="story-section">
-        <div className="container">
-          <div className="story-grid">
-            <div className="story-content">
-              <span className="section-tag">Our Story</span>
-              <h2>From a Construction Site to a National Platform</h2>
-              <p>SiteLink was born out of frustration. Our founder Vikram Singh spent 15 years managing large construction projects and constantly struggled with unverified workers, compliance gaps, and manual paperwork.</p>
-              <p>In 2019, he partnered with technologist Neha Gupta to build a digital solution — a platform that could verify workers in real-time, automate compliance reporting, and connect the entire construction ecosystem.</p>
-              <p>Today, SiteLink is India's most trusted construction manpower network, processing thousands of verifications daily across 25+ cities.</p>
-              <button className="btn-primary" onClick={() => navigate('/features')}>
-                Explore Our Platform <ArrowRight size={18} />
+          <div className="about-what-grid">
+            <div className="about-what-content">
+              <span className="section-tag">What We Do</span>
+              <h2>A Platform Built Around One Promise</h2>
+              <p>SiteLink is a request-based manpower hiring system. Vendors post their requirements — role, quantity, location, and duration — and our admin team matches them with verified workers from our database, confirming deployment within 24 hours.</p>
+              <p>If a worker leaves or underperforms, vendors can request a replacement and we deliver a new worker within 24–48 hours, with a documented reason.</p>
+              <p>Every worker on SiteLink is ID-verified, skill-checked, and admin-approved before being added to our active pool — so vendors always get reliable, trusted manpower.</p>
+              <button className="btn-primary" onClick={() => navigate('/contact')}>
+                Get in Touch <ArrowRight size={18} />
               </button>
             </div>
-            <div className="timeline">
-              {milestones.map((m, i) => (
-                <div key={m.year} className="timeline-item" style={{ animationDelay: `${i * 100}ms` }}>
-                  <div className="timeline-year">{m.year}</div>
-                  <div className="timeline-dot" />
-                  <div className="timeline-content">
-                    <h4>{m.title}</h4>
-                    <p>{m.desc}</p>
+            <div className="about-what-cards">
+              {[
+                { icon: Building2, title: 'For Vendors',  desc: 'Post manpower requirements and receive confirmed, verified workers at your site within 24 hours.' },
+                { icon: Users,     title: 'For Workers',  desc: 'Register, get verified, and receive job calls from construction sites across India.' },
+                { icon: Shield,    title: 'Admin Panel',  desc: 'Our team manages matching, verification, assignment, and replacement — end to end.' },
+              ].map(({ icon: Icon, title, desc }) => (
+                <div key={title} className="about-what-card">
+                  <div className="awc-icon"><Icon size={20} /></div>
+                  <div>
+                    <h4>{title}</h4>
+                    <p>{desc}</p>
                   </div>
                 </div>
               ))}
@@ -86,59 +56,118 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="team-section">
+      {/* ── How It Works ── */}
+      <section className="about-flow-section">
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">Leadership</span>
-            <h2>The Team Behind SiteLink</h2>
-            <p>Industry veterans and technology experts united by a common purpose.</p>
+            <span className="section-tag">How It Works</span>
+            <h2>Simple. Fast. Reliable.</h2>
+            <p>Three flows working together to deliver manpower in 24 hours.</p>
           </div>
-          <div className="team-grid">
-            {team.map((member) => (
-              <div key={member.name} className="team-card">
-                <div className="team-avatar">{member.initials}</div>
-                <h3>{member.name}</h3>
-                <div className="team-role">{member.role}</div>
-                <p>{member.desc}</p>
+          <div className="about-flows">
+
+            {/* Vendor Flow */}
+            <div className="flow-card">
+              <div className="flow-header">
+                <div className="flow-icon"><Building2 size={20} /></div>
+                <h3>Vendor Flow</h3>
+              </div>
+              <ol className="flow-steps">
+                {[
+                  'Open app & create company profile',
+                  'Login with mobile OTP',
+                  'Select role, quantity, location & duration',
+                  'Submit manpower request',
+                  'Admin matches workers from database',
+                  'Receive confirmed workers within 24 hours',
+                  'Request replacement within 48 hrs if needed',
+                ].map((s, i) => (
+                  <li key={i}>
+                    <span className="flow-num">{i + 1}</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Worker Flow */}
+            <div className="flow-card">
+              <div className="flow-header">
+                <div className="flow-icon"><Users size={20} /></div>
+                <h3>Worker Flow</h3>
+              </div>
+              <ol className="flow-steps">
+                {[
+                  'Install app & create profile',
+                  'Register with mobile OTP',
+                  'Fill role, experience, location & salary',
+                  'Upload ID proof & work experience photos',
+                  'Profile goes to admin for verification',
+                  'Admin approves — worker becomes available',
+                  'Receive job call & confirm availability',
+                  'Get assigned to vendor site',
+                ].map((s, i) => (
+                  <li key={i}>
+                    <span className="flow-num">{i + 1}</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Admin Flow */}
+            <div className="flow-card">
+              <div className="flow-header">
+                <div className="flow-icon"><Shield size={20} /></div>
+                <h3>Admin Panel</h3>
+              </div>
+              <ol className="flow-steps">
+                {[
+                  'Login to admin dashboard',
+                  'View new vendor manpower requests',
+                  'Filter workers by role, location & availability',
+                  'Contact workers & confirm availability',
+                  'Assign workers to vendor',
+                  'Update request status',
+                  'Handle replacement requests',
+                  'Maintain worker & vendor database',
+                ].map((s, i) => (
+                  <li key={i}>
+                    <span className="flow-num">{i + 1}</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Key Promises ── */}
+      <section className="about-promises-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">Our Guarantee</span>
+            <h2>Key System Promises</h2>
+          </div>
+          <div className="about-promises-grid">
+            {[
+              { icon: Clock,       title: 'Hiring in 24 Hours',         desc: 'From request submission to confirmed workers on site — guaranteed within 24 hours.' },
+              { icon: CheckCircle, title: 'Replacement in 48 Hours',     desc: 'Worker left or underperformed? Replacement delivered within 24–48 hours with documented reason.' },
+              { icon: Shield,      title: 'Verified Worker Database',    desc: 'Every worker is ID-verified, skill-checked, and admin-approved before entering our active pool.' },
+              { icon: Smartphone,  title: 'Simple Request-Based Hiring', desc: 'No complex contracts. Vendors post requirements, admin matches, manpower is deployed.' },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="about-promise-card">
+                <div className="apc-icon"><Icon size={22} /></div>
+                <h3>{title}</h3>
+                <p>{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Presence */}
-      <section className="presence-section">
-        <div className="container">
-          <div className="presence-box">
-            <div className="presence-content">
-              <span className="section-tag">Our Presence</span>
-              <h2>Operating Across India</h2>
-              <p>From metro cities to tier-2 towns, SiteLink's network spans the entire country.</p>
-              <div className="cities-grid">
-                {['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Ahmedabad', 'Kolkata', 'Jaipur', 'Surat', 'Lucknow', 'Nagpur'].map(city => (
-                  <div key={city} className="city-tag">
-                    <MapPin size={12} /> {city}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="presence-stats">
-              {[
-                { icon: Users, value: '12,000+', label: 'Verified Workers' },
-                { icon: MapPin, value: '25+', label: 'Cities' },
-                { icon: Award, value: '98%', label: 'Satisfaction Rate' },
-              ].map(({ icon: Icon, value, label }) => (
-                <div key={label} className="p-stat">
-                  <Icon size={22} />
-                  <div className="p-stat-value">{value}</div>
-                  <div className="p-stat-label">{label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
