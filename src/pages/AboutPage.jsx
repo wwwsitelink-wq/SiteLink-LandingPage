@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Users, Building2, Clock, CheckCircle, ArrowRight, Smartphone, Shield } from 'lucide-react';
+import { Shield,Users, Building2, Clock, CheckCircle, ArrowRight, Smartphone } from 'lucide-react';
 import './AboutPage.css';
 
 export default function AboutPage() {
@@ -41,7 +41,6 @@ export default function AboutPage() {
               {[
                 { icon: Building2, title: 'For Vendors',  desc: 'Post manpower requirements and receive confirmed, verified workers at your site within 24 hours.' },
                 { icon: Users,     title: 'For Workers',  desc: 'Register, get verified, and receive job calls from construction sites across India.' },
-                { icon: Shield,    title: 'Admin Panel',  desc: 'Our team manages matching, verification, assignment, and replacement — end to end.' },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="about-what-card">
                   <div className="awc-icon"><Icon size={20} /></div>
@@ -62,7 +61,7 @@ export default function AboutPage() {
           <div className="section-header">
             <span className="section-tag">How It Works</span>
             <h2>Simple. Fast. Reliable.</h2>
-            <p>Three flows working together to deliver manpower in 24 hours.</p>
+            <p>Two simple flows working together to deliver manpower in 24 hours.</p>
           </div>
           <div className="about-flows">
 
@@ -78,7 +77,7 @@ export default function AboutPage() {
                   'Login with mobile OTP',
                   'Select role, quantity, location & duration',
                   'Submit manpower request',
-                  'Admin matches workers from database',
+                  'SiteLink verified workers matched from database',
                   'Receive confirmed workers within 24 hours',
                   'Request replacement within 48 hrs if needed',
                 ].map((s, i) => (
@@ -102,35 +101,9 @@ export default function AboutPage() {
                   'Register with mobile OTP',
                   'Fill role, experience, location & salary',
                   'Upload ID proof & work experience photos',
-                  'Profile goes to admin for verification',
-                  'Admin approves — worker becomes available',
+                  'SiteLink verified workers approved before entry',
                   'Receive job call & confirm availability',
                   'Get assigned to vendor site',
-                ].map((s, i) => (
-                  <li key={i}>
-                    <span className="flow-num">{i + 1}</span>
-                    <span>{s}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            {/* Admin Flow */}
-            <div className="flow-card">
-              <div className="flow-header">
-                <div className="flow-icon"><Shield size={20} /></div>
-                <h3>Admin Panel</h3>
-              </div>
-              <ol className="flow-steps">
-                {[
-                  'Login to admin dashboard',
-                  'View new vendor manpower requests',
-                  'Filter workers by role, location & availability',
-                  'Contact workers & confirm availability',
-                  'Assign workers to vendor',
-                  'Update request status',
-                  'Handle replacement requests',
-                  'Maintain worker & vendor database',
                 ].map((s, i) => (
                   <li key={i}>
                     <span className="flow-num">{i + 1}</span>
