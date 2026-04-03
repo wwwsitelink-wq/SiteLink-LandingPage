@@ -42,7 +42,8 @@ export default function Footer() {
           <div className="footer-contact">
             <h4>Contact Us</h4>
             <div className="fc-item"><Phone size={14} /><span>+91 82608 05119</span></div>
-            <div className="fc-item"><Mail size={14} /><span>contact@smartnex.tech</span></div>
+            <div className="fc-item"><Mail size={14} /><span>info@smartnex.tech</span></div>
+            <div className="fc-item"><Mail size={14} /><span>www.sitelink@gmail.com</span></div>
             <div className="fc-bulk">
               <div className="fc-bulk-badge">Bulk Orders</div>
               <p>For bulk manpower requirements, call us directly:</p>

@@ -114,8 +114,16 @@ export default function ContactPage() {
                   <div className="info-icon"><Mail size={20} /></div>
                   <div>
                     <div className="info-title">Email</div>
-                    <div className="info-line">contact@smartnex.tech</div>
-                    <a href="mailto:contact@smartnex.tech" className="info-action">Send an email <ArrowRight size={13} /></a>
+                    <div className="info-line">info@smartnex.tech</div>
+                    <a href="mailto:info@smartnex.tech" className="info-action">Send an email <ArrowRight size={13} /></a>
+                  </div>
+                </div>
+                <div className="info-card">
+                  <div className="info-icon"><Mail size={20} /></div>
+                  <div>
+                    <div className="info-title">SiteLink Email</div>
+                    <div className="info-line">www.sitelink@gmail.com</div>
+                    <a href="mailto:www.sitelink@gmail.com" className="info-action">Send an email <ArrowRight size={13} /></a>
                   </div>
                 </div>
                 <div className="info-card">
