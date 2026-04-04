@@ -5,18 +5,26 @@ import './ContactPage.css';
 const faqs = [
   { q: 'How long does worker verification take?', a: 'Most verifications complete within 24-48 hours. Aadhaar and PAN verification is instant.' },
   { q: 'Is SiteLink compliant with Indian labour laws?', a: 'Yes. SiteLink is fully compliant with BOCW Act, Contract Labour Act, PF & ESI regulations.' },
-  { q: 'Can I integrate SiteLink with my existing ERP?', a: 'Yes, we offer REST APIs and pre-built connectors for SAP, Oracle, and other major ERP systems.' },
   { q: 'What happens if a worker fails verification?', a: 'You receive an instant alert with the specific reason. You can request re-verification or flag the worker.' },
   { q: 'Is there a mobile app available?', a: 'Yes, SiteLink is available on iOS and Android for on-site supervisors and workers.' },
 ];
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', message: '', type: 'demo' });
+  const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', message: ''});
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`SiteLink Enquiry Request - ${form.company}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}
+       Email: ${form.email}
+       Company: ${form.company}
+       Phone: ${form.phone || 'Not provided'}
+       Message:${form.message}`
+    );
+    window.location.href = `mailto:info@smartnex.tech?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
@@ -56,18 +64,6 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form className="contact-form" onSubmit={handleSubmit}>
-                  <div className="form-type-tabs">
-                    {['demo', 'support', 'partnership'].map(t => (
-                      <button
-                        key={t}
-                        type="button"
-                        className={`type-tab ${form.type === t ? 'active' : ''}`}
-                        onClick={() => setForm(p => ({ ...p, type: t }))}
-                      >
-                        {t.charAt(0).toUpperCase() + t.slice(1)}
-                      </button>
-                    ))}
-                  </div>
 
                   <div className="form-row">
                     <div className="form-group">
